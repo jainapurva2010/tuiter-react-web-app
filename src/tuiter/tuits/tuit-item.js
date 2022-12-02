@@ -1,5 +1,5 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {deleteTuit} from "./tuits-reducer";
 import TuitStats from "./tuit-stats";
 
@@ -13,7 +13,6 @@ const TuitItem = (
         }
     }
 ) => {
-    const tuitsArray = useSelector(state => state.tuits)
     const dispatch = useDispatch();
     const deleteTuitHandler = (id) => {
         dispatch(deleteTuit(id));
@@ -22,7 +21,7 @@ const TuitItem = (
         <li className="list-group-item">
             <div className="row">
                 <div className="col-2">
-                    <img alt="Profile Picture" width={50} className="rounded-circle" src={require(`../images/${tuit.image}`)}></img>
+                    <img alt="Profile" width={50} className="rounded-circle" src={require(`../images/${tuit.image}`)}></img>
                 </div>
                 <div className="col-9">
                     <div>

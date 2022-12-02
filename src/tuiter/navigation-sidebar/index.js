@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {navLinks} from "../index";
 
 const NavigationSidebar = ({active, setActive}) => {
@@ -6,10 +6,10 @@ const NavigationSidebar = ({active, setActive}) => {
         <div className="list-group">
             {
                 navLinks.map(link =>
-                <a
+                <button
                     className={`list-group-item ${active === link.name ?'active':''}`}
                     onClick={event => setActive(link.name)}
-                >{link.name}</a>)
+                >{link.name}</button>)
             }
         </div>
     );
